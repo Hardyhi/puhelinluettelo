@@ -27,7 +27,7 @@ function kysyToiminto() {
     rl.question("Lisää henkilö 1\nHae henkilöä 2\nLopeta käyttö 3\nAnna valinta numerona: ", (syote) => {
         if (syote === "1") {
             // Lisätään uusi henkilö
-            rl.question("Anna henkilön nimi: ", (uusiNimi) => {
+            rl.question("Anna nimi: ", (uusiNimi) => {
                 rl.question("Anna puhelinnumero: ", (uusiNumero) => {
                     henkilot.push({ nimi: uusiNimi, numero: uusiNumero });
                     console.log(`Lisätty: ${uusiNimi} - ${uusiNumero}\n`);
@@ -37,7 +37,7 @@ function kysyToiminto() {
 
         } else if (syote === "2") {
             // Haetaan henkilöä
-            rl.question("Anna henkilön nimi: ", (haettavaNimi) => {
+            rl.question("Anna nimi: ", (haettavaNimi) => {
                 let numero = haeNumero(henkilot, haettavaNimi);
                 console.log(`Henkilö: ${haettavaNimi}, numero: ${numero}\n`);
                 kysyToiminto();
